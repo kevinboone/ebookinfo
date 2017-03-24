@@ -1,0 +1,74 @@
+.\" Copyright (C) 2017 Kevin Boone 
+.\" Permission is granted to any individual or institution to use, copy, or
+.\" redistribute this software so long as all of the original files are
+.\" included, that it is not sold for profit, and that this copyright notice
+.\" is retained.
+.\"
+.TH ebookinfo 1 "March 2017"
+.SH NAME
+ebookinfo \- a command-line utility to display metadata from e-book files 
+.SH SYNOPSIS
+.B ebookinfo
+.RB [options]
+.B {files...}
+.PP
+
+.SH DESCRIPTION
+\fIepubinfo\fR is simple Linux command-line utility for 
+displaying basic meta-data -- author, title, etc -- from various
+e-book files. At present, it supports EPUB, MOBI, and RTF.
+It includes a library that can be used by other applications for
+extracting e-book meta-data; the 
+\fIepubinfo\fR utility is essentially a demonstration of the
+usage of the library. 
+
+
+.SH "OPTIONS"
+.TP
+.BI -c,\-\-comment
+Display a document comment or description, if there is one. This display
+is not enabled by default because, if this item is present, it tends
+to be lengthy
+.LP
+
+.TP
+.BI -h,\-\-html2text
+Pass the output through html2text. Some e-book authors provide meta-data
+in HTML or XHTML; even when they do not, this option sometimes improves
+the readability of plain text
+.LP
+
+.TP
+.BI -v,\-\-version
+Display version and copyright infomation
+.LP
+
+.SH NOTES
+
+.SS Meta-data differences
+
+There is no standard for the kind of meta-data that different document
+formats support. This utility displays the five basic entries that 
+most formats handle -- author, title, year, genre/subject, comment.
+EPUB and MOBI formats allow multiple genre/subject tags, these are
+displayed as a comma-separated list. The 'year' attribute is the
+year of the last document revision, in formats that distinguish different
+dates. 
+
+
+.SH AUTHOR AND LEGAL
+\fIepubinfo\fR
+is maintained by Kevin Boone, and is open source under the
+terms of the GNU Public Licence, version 3.0. It contains contributions
+from a number of other authors, whose details may be found in 
+the source code.
+There is no warranty
+of any kind.
+
+
+.SH FURTHER INFORMATION 
+For more details, see 
+http://kevinboone.net/README_ebookinfo.html.
+
+
+.\" end of file
